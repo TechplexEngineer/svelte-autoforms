@@ -35,6 +35,9 @@ function extractFieldType(column: any): FieldType {
 
 /**
  * Parse a Drizzle table schema and extract field definitions
+ * 
+ * Note: This function accesses Drizzle ORM internal structures.
+ * Tested with drizzle-orm ^0.36.4. Future versions may require updates.
  */
 export function parseSchema(tableSchema: any): FormSchema {
 	const fields: FieldDefinition[] = [];
@@ -58,7 +61,7 @@ export function parseSchema(tableSchema: any): FormSchema {
 			name: columnName,
 			label: formatLabel(columnName),
 			type: fieldType,
-			required: col.notNull === true || col.hasDefault === false,
+			required: col.notNull === true && col.hasDefault !== true,
 		};
 		
 		// Add constraints

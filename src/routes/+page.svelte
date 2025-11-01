@@ -234,7 +234,7 @@
 		<div class="card">
 			<div class="card-body">
 				<h3 class="card-title">Usage with Drizzle ORM</h3>
-				<pre class="bg-light p-3 rounded"><code>{`import { pgTable, varchar, integer, boolean } from 'drizzle-orm/pg-core';
+				<pre class="bg-light p-3 rounded"><code>{`import { pgTable, serial, varchar, integer, boolean } from 'drizzle-orm/pg-core';
 import { AutoForm, parseSchema, bootstrapTheme } from 'svelte-autoforms';
 
 // Define your Drizzle schema

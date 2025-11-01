@@ -129,19 +129,6 @@
 			}
 		}
 	}
-	
-	function getFieldComponent(fieldType: string) {
-		switch (fieldType) {
-			case 'select':
-				return SelectField;
-			case 'textarea':
-				return TextareaField;
-			case 'checkbox':
-				return CheckboxField;
-			default:
-				return InputField;
-		}
-	}
 </script>
 
 <form class={theme?.formClass || ''} onsubmit={handleSubmit}>
